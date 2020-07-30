@@ -1,0 +1,42 @@
+首先需要安装node.js  git  点击右键查看菜单中是否有 Git GUI Here 和 Git Bash Here两个选项，如果存在，则证明安装成功，在 命令提示符$ 中用$ git --version
+       $ node -v
+       $ npm -v查看是否安装成功
+安装hexo  
+选择一个磁盘，新建一个文件，可以自己重命名，点击 Git Bash Here，输入以下 npm 命令即可安装
+      $ npm install hexo-cli -g
+      $ npm install hexo-deployer-git --save
+需要初始化博客，输入以下命令
+      $hexo init
+完成后，hexo会多出很多文件  执行$hexo g
+                                                   $hexo s
+登录 http://localhost:4000/可以查看初始效果 ctrl + c 停止运行
+部署到github
+安装插件
+cnpm install --save hexo-deployer-git
+
+创建github仓库
+
+仓库名必须是github用户名.github.io
+
+配置_config.yml文件
+open -t _config.yml
+
+配置前
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: ''
+添加type repo branch信息
+
+配置后
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+type: git
+repo: 自己创建仓库地址
+branch: master
+
+部署在github
+hexo -g d
